@@ -48,7 +48,6 @@ const main = () => {
             items.push(item.path)
         })
         .on('end', function () {
-            console.log(items)
             for (let index in items) {
                 if (items[index].includes(mdextension)) {
                     let sanitizedindir; 
