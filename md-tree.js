@@ -48,9 +48,12 @@ const main = () => {
             items.push(item.path)
         })
         .on('end', function () {
+            console.log(items)
             for (let index in items) {
                 if (items[index].includes(mdextension)) {
-                    sanitized.set(items[index].replace(__dirname, ""), items[index])
+                    let sanitizedindir; 
+                    directoryToExplore.startsWith(".") ? sanitizedindir = directoryToExplore.replace(".", "") : sanitizedindir = directoryToExplore;
+                    sanitized.set(items[index].replace(__dirname + sanitizedindir, ""), items[index])
                 }
             }
 
