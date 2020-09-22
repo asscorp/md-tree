@@ -1,0 +1,5 @@
+{
+    "mdextension": ".md",
+    "path": "./content",
+    "port": 3000
+}
