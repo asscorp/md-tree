@@ -8,33 +8,48 @@ Md-tree is a basic server that creates something like a website from a given fol
 ~~~
 .
 ├── folder1
-|   └── FirstPage.md
-|
+|   └── Another.md
 └── folder2
-    ├── SecondPage.md
-    └── ThirdPage.md
+    ├── subfolder
+    |   ├── subsubfolder
+    |   |   └── One.md
+    |   └── Bites.md
+    ├── The.md
+    └── Dust.md
 ~~~
 
 This will turn into the following routes:
 
 ~~~
-/folder1/FirstPage
-/folder2/SecondPage
-/folder2/ThirdPage
+/folder1/Another
+/folder2/subfolder/subsubfolder/One
+/folder2/subfolder/Bites
+/folder2/The
+/folder2/Dust
 ~~~
 
 ## Installation/Setup
 
+**Prerequiries:**
+
+- Node (>= v10) and npm installed
+
+**Installation:**
+
 1. Clone this repository and go into the folder
 ~~~
-$git clone https://github.com/MeerBiene/md-tree.git
-$cd md-tree
+git clone https://github.com/MeerBiene/md-tree.git
+cd md-tree
 ~~~
-2. Place your content folder inside the projects folder
+2. Install dependencies. Run `npm install` inside the projects folder
+~~~
+npm install
+~~~
+3. Place your content folder inside the projects folder
 
-3. Start the server and pass in the port as well as your content directory
+4. Start the server and pass in the port as well as your content directory
 ~~~
-$npm start 3000 ./content
+npm start 3000 ./content
             ^        ^
            port    content directory
 ~~~
