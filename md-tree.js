@@ -27,7 +27,7 @@ app.use(express.json())
 // End Express App Configuration
 
 const PORT = process.argv[2] || 3000
-const directoryToExplore = process.argv[3] || "content"
+const directoryToExplore = process.argv[3] || "./content"
 
 const main = () => {
     /**

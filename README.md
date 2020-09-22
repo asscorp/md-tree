@@ -47,7 +47,7 @@ npm install
 ~~~
 3. Place your content folder inside the projects folder
 
-4. Start the server and pass in the port as well as your content directory
+4. Start the server and pass in the port as well as your content directory. (!) The directory path has to be a **relative path**.
 ~~~
 npm start 3000 ./content
             ^        ^
