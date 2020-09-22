@@ -1,10 +1,12 @@
 {
-  "name": "markdown-tree-generator",
+  "name": "md-tree",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node md-tree.js",
+    "dev": "nodemon md-tree.js"
   },
   "keywords": [],
   "author": "",

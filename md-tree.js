@@ -10,6 +10,7 @@
  * 
  * Example
  * node md-tree.js 3000 ./content
+ * npm start 3000 ./content
  */
 
 const fs = require("fs");
@@ -29,7 +30,6 @@ const PORT = process.argv[2] || 3000
 const directoryToExplore = process.argv[3] || "content"
 
 const main = () => {
-
     /**
      * Use this map to set the sanitized
      * path and file in relation to the 
@@ -38,11 +38,10 @@ const main = () => {
      * 
      * Example:
      * '/testcontent/page2/start/first.md' => 'C:\\Users\\SomeUser\\.....'
-     * 
      */
-
-    let items = [];
+    
     let sanitized = new Map();
+    let items = [];
 
     klaw(directoryToExplore)
         .on('data', function (item) {
@@ -67,8 +66,10 @@ const main = () => {
                     if (rawRarsedURI[index] !== '') removedwhitespaces.push(rawRarsedURI[index].replace(".md", ""))
                 }
 
-                const parsedURI = removedwhitespaces.join('/')
+                let parsedURI = removedwhitespaces.join('/')
+                parsedURI.startsWith("/") ? parsedURI = parsedURI.replace("/", "") : null;
                 console.log(`Registering the route |  ${parsedURI}`)
+
                 
                 app.get("/" + parsedURI, (req, res) => {
                     // create a writestream to the desired file
