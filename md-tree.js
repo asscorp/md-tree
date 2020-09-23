@@ -17,7 +17,8 @@ const fs = require("fs");
 const klaw = require("klaw");
 const express = require('express');
 const showdown = require('showdown');
-const converter = new showdown.Converter()
+const converter = new showdown.Converter();
+const { templateString } = require('./template');
 
 const { mdextension } = require("./config.json")
 
@@ -70,7 +71,7 @@ const main = () => {
 
                 let parsedURI = removedwhitespaces.join('/')
                 parsedURI.startsWith("/") ? parsedURI = parsedURI.replace("/", "") : null;
-                console.log(`Registering the route |  ${parsedURI}`)
+                console.log(`[md-tree] Registering the route |  ${parsedURI}`)
 
                 
                 app.get("/" + parsedURI, (req, res) => {
@@ -88,7 +89,7 @@ const main = () => {
                         res
                             .status(200)
                             .header("Content-Type", "text/html; charset=UTF-8")
-                            .send(Buffer.from(converted));
+                            .send(Buffer.from(templateString("test", converted)));
                     })
                     readStream.on('error', (err) => {
                         console.error('error :', err)
@@ -100,7 +101,7 @@ const main = () => {
                 })
             }
             app.listen(PORT, () => {
-                console.log(`Started the server on port ${PORT}`)
+                console.log(`[md-tree] Started the server on port ${PORT}`)
             })
         })
         .on('error', function (err, item) {
