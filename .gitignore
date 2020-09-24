@@ -2,3 +2,5 @@ node_modules
 content
 *.log
 package-lock.json
+build
+build_test.js
