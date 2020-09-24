@@ -1,3 +1,5 @@
 {
-    "mdextension": ".md"
+    "mdextension": ".md",
+    "template": "default",
+    "buildFolderName": "build"
 }

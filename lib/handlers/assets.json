@@ -1,0 +1,10 @@
+{
+    "supported": [
+        ".js",
+        ".css",
+        ".jpg",
+        ".jpeg",
+        ".svg",
+        ".png"
+    ]
+}

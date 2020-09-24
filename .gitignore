@@ -1,10 +1,7 @@
 node_modules
 content
 *.log
-<<<<<<< HEAD
 package-lock.json
-=======
 package-lock.json
 build
 build_test.js
->>>>>>> 1e05503f5fe587b18e2ff8600935080c162d4ef8
