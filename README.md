@@ -54,6 +54,21 @@ npm start 3000 ./content
            port    content directory
 ~~~
 
+## Config
+
+These are the default values in the config.json. Edit them if needed. If you have a custom template, you need to pass in the foldername of your template.
+
+~~~json
+{
+    // extension that your markdown files use
+    "mdextension": ".md",
+    // template that you want to use. Available templates [ "default" ]
+    "template": "default",
+    // name that the build folder should have
+    "buildFolderName": "build"
+}
+~~~
+
 ## TODO/WIP Features
 
 > - Global Navigation
